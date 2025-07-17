@@ -5,6 +5,7 @@ metadata:
   name: {{ .Release.Name }}-ingress
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: {{ .Values.ingress.entryPoint }}
+    traefik.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   rules:
     - host: {{ .Values.ingress.host }}
